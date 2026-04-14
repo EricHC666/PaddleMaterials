@@ -39,11 +39,10 @@ from ppmat.utils.io import read_json_lines
 from ppmat.utils.misc import is_equal
 
 
-class MatBenchDataset(Dataset):
-    """MatBench 数据集处理类。
+class OPENDACDataset(Dataset):
+    """OPENDAC 数据集处理类。
 
     该数据集的处理类完全参考自 mp2024_dataset.py，输入输出格式能够无缝适配 MEGNet 等模型。
-    这是一个改版后的 MatBench 数据加载器类，其保持和大基座代码相同模式。
 
     **数据格式**
     与 mp2024 一致，数据集中的每个样本都被表示为一个 `dict`。包含材料的各种物理、化学属性以及结构（structure）等。
@@ -59,12 +58,10 @@ class MatBenchDataset(Dataset):
         filter_unvalid (bool, optional): 是否过滤掉无效的样本（例如缺失目标属性或者是无效的图数据的样本）。默认为 True。
     """
 
-    # MatBench 下载链接和信息
-    name = "matbench"
-    url = (
-        "https://paddle-org.bj.bcebos.com/paddlematerial/datasets/matbench/matbench.zip"
-    )
-    md5 = "71e85300825604c2e228cbbf75574906"
+    # OpenDAC 占位链接和信息（可根据实际的下载链接和 MD5 修改）
+    name = "opendac_train"
+    url = "https://paddle-org.bj.bcebos.com/paddlematerial/datasets/opendac/opendac_train.zip"
+    md5 = "00000000000000000000000000000000"
 
     def __init__(
         self,
